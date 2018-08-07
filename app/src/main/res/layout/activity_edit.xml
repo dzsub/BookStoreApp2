@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/category_overview" />
+            android:text="@string/product" />
 
         <!-- Input fields -->
         <LinearLayout
@@ -34,21 +34,57 @@
                 android:hint="@string/hint_book_name"
                 android:inputType="textCapWords" />
 
-            <!-- Price field -->
-            <EditText
-                android:id="@+id/edit_book_price"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_book_price"
-                android:inputType="number" />
+                android:layout_height="wrap_content">
+                <!-- Price field -->
+                <EditText
+                    android:id="@+id/edit_book_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_book_price"
+                    android:inputType="number" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/currency"
+                    android:textAppearance="?android:textAppearanceMedium" />
+            </RelativeLayout>
             <!-- Quantity field -->
-            <EditText
-                android:id="@+id/edit_book_quantity"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_book_quantity"
-                android:inputType="number" />
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edit_book_quantity"
+                    android:layout_width="@dimen/zero_dp_for_layout_weight"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_book_quantity"
+                    android:inputType="number" />
+
+
+                <Button
+                    android:id="@+id/increase_button"
+                    android:layout_width="@dimen/zero_dp_for_layout_weight"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/plus_button"
+                    android:textSize="@dimen/button_text_size" />
+
+                <Button
+                    android:id="@+id/decrease_button"
+                    android:layout_width="@dimen/zero_dp_for_layout_weight"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/minus_button"
+                    android:textSize="@dimen/button_text_size" />
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 
@@ -91,4 +127,12 @@
                 android:inputType="number" />
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/order_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_edit_button_margin_top"
+        android:text="@string/order_button"
+        android:textSize="@dimen/button_text_size" />
 </LinearLayout>

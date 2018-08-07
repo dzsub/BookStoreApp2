@@ -4,4 +4,10 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="layout_padding_left">4dp</dimen>
     <dimen name="layout_padding_top">20dp</dimen>
+    <dimen name="sell_button_margin_top">20dp</dimen>
+    <dimen name="sell_button_margin_right">10dp</dimen>
+    <dimen name="empty_view_information_padding_top">8dp</dimen>
+    <dimen name="activity_edit_button_margin_top">20dp</dimen>
+    <dimen name="button_text_size">20sp</dimen>
+    <dimen name="zero_dp_for_layout_weight">0dp</dimen>
 </resources>

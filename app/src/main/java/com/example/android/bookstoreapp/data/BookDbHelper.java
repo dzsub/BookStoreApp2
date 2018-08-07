@@ -22,19 +22,20 @@ public class BookDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // CREATE TABLE pets (id INTEGER PRIMARY KEY, name TEXT, weight TEXT)
-        // create a String that contains the SQL statement to create the pets table
+
         String SQL_CREATE_INVENTORY_TABLE = "CREATE TABLE "
                 + BookContract.BookEntry.TABLE_NAME + "("
                 + BookContract.BookEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + BookContract.BookEntry.COLUMN_PRODUCT_NAME + " TEXT NOT NULL, "
                 + BookContract.BookEntry.COLUMN_PRICE + " INTEGER NOT NULL, "
-                + BookContract.BookEntry.COLUMN_QUANTITY + " INTEGER NOT NULL DEFAULT 0, "
-                + BookContract.BookEntry.COLUMN_SUPPLIER_NAME + " TEXT, "
-                + BookContract.BookEntry.COLUMN_SUPPLIER_PHONE_NUMBER + " INTEGER);";
+                + BookContract.BookEntry.COLUMN_QUANTITY + " INTEGER NOT NULL, "
+                + BookContract.BookEntry.COLUMN_SUPPLIER_NAME + " TEXT NOT NULL, "
+                + BookContract.BookEntry.COLUMN_SUPPLIER_PHONE_NUMBER + " TEXT NOT NULL);";
 
+        // Execute the SQL statement
         db.execSQL(SQL_CREATE_INVENTORY_TABLE);
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
